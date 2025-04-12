@@ -20,9 +20,13 @@
 <!--        <constructor-arg type="org.example.model.Laptop" ref="lap"/>-->
 <!--        <constructor-arg type="int" value="21"/>-->
         <!-- Using Name -->
-        <constructor-arg name="laptop" ref="lap"/>
-        <constructor-arg name="age" value="21"/>
-
+<!--        <constructor-arg name="laptop" ref="lap"/>-->
+<!--        <constructor-arg name="age" value="21"/>-->
+<!-- Inner bean This bean is used only by the Alien class -->
+        <property name="age" value="21"/>
+        <property name="laptop">
+            <bean id="lap" class="org.example.model.Laptop"/>
+        </property>
     </bean>
-    <bean id="lap" class="org.example.model.Laptop"></bean>
+<!--    <bean id="lap" class="org.example.model.Laptop"></bean>-->
 </beans>
