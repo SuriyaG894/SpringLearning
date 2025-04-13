@@ -1,8 +1,8 @@
 package org.example.model;
 
-public class Laptop {
+public class Laptop implements Computer{
 
-    Laptop(){
+    public Laptop(){
         System.out.println("Laptop Created");
     }
 

@@ -4,7 +4,8 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="alien" class="org.example.model.Alien">
+<!--    <bean id="alien" class="org.example.model.Alien" autowire="byType">&lt;!&ndash; If we use by type we need to specify primary attribute in any one of the bean available &ndash;&gt;-->
+    <bean id="alien" class="org.example.model.Alien" autowire="byName"><!-- It will search for bean with the same name as the field name in the Alien class -->
         <!--Setter Injection -->
         <!--
         <property name="age" value="23"/>
@@ -23,10 +24,11 @@
 <!--        <constructor-arg name="laptop" ref="lap"/>-->
 <!--        <constructor-arg name="age" value="21"/>-->
 <!-- Inner bean This bean is used only by the Alien class -->
-        <property name="age" value="21"/>
-        <property name="laptop">
-            <bean id="lap" class="org.example.model.Laptop"/>
-        </property>
+<!--        <property name="age" value="21"/>-->
+<!--        <property name="laptop">-->
+<!--            <bean id="lap" class="org.example.model.Laptop"/>-->
+<!--        </property>-->
     </bean>
-<!--    <bean id="lap" class="org.example.model.Laptop"></bean>-->
+    <bean id="computer" class="org.example.model.Laptop"/>
+    <bean id="desk" class="org.example.model.Desktop" />
 </beans>

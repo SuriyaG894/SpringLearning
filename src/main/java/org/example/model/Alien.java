@@ -4,25 +4,32 @@ import java.beans.ConstructorProperties;
 
 public class Alien {
 
-    private Laptop laptop;
+//    private Laptop laptop;
+    private Computer computer;
     private int age;
 
-
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
+    public Computer getComputer() {
+        return computer;
     }
 
-    @ConstructorProperties({"age","laptop"}) // while using this we need to specify the name in the constructor-arg tag.
-    Alien(int age,Laptop laptop){
-        this.age = age;
-        this.laptop = laptop;
+    public void setComputer(Computer computer) {
+        this.computer = computer;
     }
+//    public void setLaptop(Laptop laptop) {
+//        this.laptop = laptop;
+//    }
+
+//    @ConstructorProperties({"age","laptop"}) // while using this we need to specify the name in the constructor-arg tag.
+//    Alien(int age,Laptop laptop){
+//        this.age = age;
+//        this.laptop = laptop;
+//    }
 
     public void setAge(int age) {
         this.age = age;
     }
 
-    Alien()
+    public Alien()
     {
         System.out.println("Alien Object is created"+age);
     }
@@ -30,6 +37,7 @@ public class Alien {
     public void code()
     {
         System.out.println("Coding....");
-        laptop.compile();
+//        laptop.compile();
+        computer.compile();
     }
 }
